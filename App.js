@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NativeBaseProvider, HStack, Text, Center } from "native-base";
+import Github from "./Github";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <Center>
+        <HStack bg="#0066ff" px="1" py="3" justifyContent="space-between" alignItems="center" w="100%" maxW="400">
+          <HStack alignItems="center" px="12" py="3" >
+            <Text color="white" fontSize="23" fontWeight="bold">
+              Find GitHub Users Here!
+            </Text>
+          </HStack>
+        </HStack>
+
+      </Center>
+      <Github />
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
